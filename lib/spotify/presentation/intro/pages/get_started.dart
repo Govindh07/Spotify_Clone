@@ -4,8 +4,11 @@ import 'package:spotify/core/configs/assets/app_images.dart';
 import 'package:spotify/core/configs/assets/app_vectors.dart';
 import 'package:spotify/core/configs/theme/app_colors.dart';
 import 'package:spotify/spotify/presentation/choose_mode/pages/choose_mode.dart';
-
 import '../../../../common/widgets/button/basic_app_button.dart';
+
+void main(){
+  runApp(MaterialApp(debugShowCheckedModeBanner: false,home: const  GetStarted(),));
+}
 
 class  GetStarted extends StatelessWidget {
   const  GetStarted({super.key});
