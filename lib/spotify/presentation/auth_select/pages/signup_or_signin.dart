@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:spotify/common/helpers/is_dark_mode.dart';
 import 'package:spotify/common/widgets/button/basic_app_button.dart';
 import 'package:spotify/core/configs/assets/app_images.dart';
 import 'package:spotify/core/configs/assets/app_vectors.dart';
@@ -51,7 +52,7 @@ class signup_signinPage extends StatelessWidget {
                   Text("Enjoy Listening to Music",
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
-                      color: Colors.white,
+                        color: context.isDarkMode ? Colors.white : Colors.black,
                       fontSize: 20
                     ),
                   ),
@@ -83,13 +84,15 @@ class signup_signinPage extends StatelessWidget {
                       Expanded(
                         flex: 1,
                         child: TextButton(
-                            onPressed: (){},
+                            onPressed: (){
+
+                            },
                             child: Text('Sigin',
                             style:
                             TextStyle(
                                 fontWeight: FontWeight.bold,
                                 fontSize: 17,
-                                color: Colors.white),)),
+                                color: context.isDarkMode ? Colors.white : Colors.black),)),
                       )
                     ]
                   )
