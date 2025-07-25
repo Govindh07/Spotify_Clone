@@ -3,11 +3,10 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:spotify/spotify/presentation/auth_select/pages/signup_or_signin.dart';
+import 'package:spotify/spotify/presentation/authentication/pages/signup_or_signin.dart';
 import '../../../../common/widgets/button/basic_app_button.dart';
 import '../../../../core/configs/assets/app_images.dart';
 import '../../../../core/configs/assets/app_vectors.dart';
-import '../../../../core/configs/theme/app_colors.dart';
 import '../bloc/theme_logic.dart';
 
 class ChoodeMode extends StatelessWidget {
