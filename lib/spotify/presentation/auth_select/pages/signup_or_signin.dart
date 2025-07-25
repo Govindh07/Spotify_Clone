@@ -89,7 +89,7 @@ class signup_signinPage extends StatelessWidget {
                             TextStyle(
                                 fontWeight: FontWeight.bold,
                                 fontSize: 17,
-                                color: AppColor.primary),)),
+                                color: Colors.white),)),
                       )
                     ]
                   )
