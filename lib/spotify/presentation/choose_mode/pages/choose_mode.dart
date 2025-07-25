@@ -1,11 +1,13 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import '../../../../common/widgets/button/basic_app_button.dart';
 import '../../../../core/configs/assets/app_images.dart';
 import '../../../../core/configs/assets/app_vectors.dart';
 import '../../../../core/configs/theme/app_colors.dart';
+import '../bloc/theme_logic.dart';
 
 class ChoodeMode extends StatelessWidget {
   const ChoodeMode({super.key});
@@ -51,19 +53,24 @@ body: Stack(
             children: [
               Column(
                 children: [
-                  ClipOval(
-                    child: BackdropFilter(
-                      filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
-                      child: Container(
-                        height: 80,
-                        width: 80,
-                        decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                          color: Color(0xff30393C).withOpacity(0.5),
-                        ),
-                        child: SvgPicture.asset(
-                          AppVectors.moon,
-                          fit: BoxFit.none,
+                  GestureDetector(
+                    onTap: (){
+                      context.read<ThemeLogic>().updateTheme(ThemeMode.dark);
+                    },
+                    child: ClipOval(
+                      child: BackdropFilter(
+                        filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+                        child: Container(
+                          height: 80,
+                          width: 80,
+                          decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                            color: Color(0xff30393C).withOpacity(0.5),
+                          ),
+                          child: SvgPicture.asset(
+                            AppVectors.moon,
+                            fit: BoxFit.none,
+                          ),
                         ),
                       ),
                     ),
@@ -83,19 +90,24 @@ body: Stack(
 
               Column(
                 children: [
-                  ClipOval(
-                    child: BackdropFilter(
-                      filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
-                      child: Container(
-                        height: 80,
-                        width: 80,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: Color(0xff30393C).withOpacity(0.5),
-                        ),
-                        child: SvgPicture.asset(
-                          AppVectors.sun,
-                          fit: BoxFit.none,
+                  GestureDetector(
+                    onTap: (){
+                      context.read<ThemeLogic>().updateTheme(ThemeMode.light);
+                    },
+                    child: ClipOval(
+                      child: BackdropFilter(
+                        filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+                        child: Container(
+                          height: 80,
+                          width: 80,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: Color(0xff30393C).withOpacity(0.5),
+                          ),
+                          child: SvgPicture.asset(
+                            AppVectors.sun,
+                            fit: BoxFit.none,
+                          ),
                         ),
                       ),
                     ),
