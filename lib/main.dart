@@ -29,14 +29,14 @@ class _SpotifyState extends State<Spotify> {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider(create: (context) => ThemeLogic()),
+        BlocProvider(create: (_) => ThemeLogic()),
       ],
       child: BlocBuilder<ThemeLogic, ThemeMode>(
-builder: (context, mode) => MaterialApp(
+       builder: (context, mode) => MaterialApp(
           debugShowCheckedModeBanner: false,
           theme:AppTheme.lightTheme,
-            darkTheme: AppTheme.darkTheme,
             themeMode: mode,
+            darkTheme: AppTheme.darkTheme,
             home: const SplashPage()
         ),
       ),

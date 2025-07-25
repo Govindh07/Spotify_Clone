@@ -6,7 +6,6 @@ class ThemeLogic extends HydratedCubit<ThemeMode>{
 
  void updateTheme(ThemeMode themeMode) => emit(themeMode);
 
-
   @override
   ThemeMode? fromJson(Map<String, dynamic> json) {
     // TODO: implement fromJson

@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:spotify/spotify/presentation/auth_select/pages/signup_or_signin.dart';
 import '../../../../common/widgets/button/basic_app_button.dart';
 import '../../../../core/configs/assets/app_images.dart';
 import '../../../../core/configs/assets/app_vectors.dart';
@@ -133,7 +134,7 @@ body: Stack(
             onPressed: (){
               Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const  ChoodeMode()));
+                  MaterialPageRoute(builder: (context) => const  signup_signinPage()));
             },
             title: 'Continue',
           )
