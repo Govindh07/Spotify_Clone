@@ -2,17 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:spotify/common/widgets/button/Appbar/app_bar.dart';
 import 'package:spotify/common/widgets/button/basic_app_button.dart';
-import 'package:spotify/spotify/presentation/authentication/pages/signin.dart';
+import 'package:spotify/spotify/presentation/authentication/pages/signup.dart';
 
 import '../../../../core/configs/assets/app_vectors.dart';
 
-class Signup extends StatelessWidget {
-  const Signup({super.key});
+class Signin  extends StatelessWidget {
+  const Signin ({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar:  signinText(context),
+      bottomNavigationBar:  signupText(context),
       appBar: BasicAppBar(
         title: SvgPicture.asset(
           AppVectors.logo,
@@ -22,25 +22,23 @@ class Signup extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(
-          horizontal: 30,
-          vertical: 50
+            horizontal: 30,
+            vertical: 50
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             _registerText(),
 
-           const SizedBox(height: 50),
+            const SizedBox(height: 50),
 
             fullName(context),
             const SizedBox(height: 20),
             email(context),
-            const SizedBox(height: 20),
-            password(context),
 
             const SizedBox(height: 50),
             appButton(onPressed:(){} ,
-                title: 'Create Account'),
+                title: 'Sign In'),
           ],
         ),
       ),
@@ -48,11 +46,11 @@ class Signup extends StatelessWidget {
   }
 
   Widget _registerText(){
-    return Text('Register',
-    style: TextStyle(
-      fontWeight: FontWeight.bold,
-      fontSize: 25
-    ),
+    return Text('Sign In',
+      style: TextStyle(
+          fontWeight: FontWeight.bold,
+          fontSize: 25
+      ),
       textAlign: TextAlign.center,
     );
   }
@@ -60,24 +58,14 @@ class Signup extends StatelessWidget {
   Widget fullName(BuildContext context){
     return TextField(
       decoration: InputDecoration(
-        hintText: 'Full Name'
-      ).applyDefaults(
-        Theme.of(context).inputDecorationTheme
-      ),
-    );
-  }
-
-  Widget email(BuildContext context){
-    return TextField(
-      decoration: InputDecoration(
-          hintText: 'Enter Email'
+          hintText: 'Enter username or Email'
       ).applyDefaults(
           Theme.of(context).inputDecorationTheme
       ),
     );
   }
 
-  Widget password(BuildContext context){
+  Widget email(BuildContext context){
     return TextField(
       decoration: InputDecoration(
           hintText: 'Password'
@@ -87,15 +75,15 @@ class Signup extends StatelessWidget {
     );
   }
 
-  Widget signinText(BuildContext context) {
+  Widget signupText(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(
-        vertical: 25
+          vertical: 25
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text('Already have an account?',
+          Text('Not a member?',
             style: TextStyle(
               fontWeight: FontWeight.w500,
               fontSize: 15,
@@ -104,10 +92,10 @@ class Signup extends StatelessWidget {
 
           TextButton(
               onPressed: (){
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => Signin()));
-              },
-              child: Text('Sign IN'))
+      Navigator.push(context,
+          MaterialPageRoute(builder: (context) => Signup()));
+    },
+              child: Text('Register Now'))
         ],
       ),
     );
