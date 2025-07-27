@@ -6,6 +6,7 @@ import 'package:spotify/common/widgets/button/basic_app_button.dart';
 import 'package:spotify/core/configs/assets/app_images.dart';
 import 'package:spotify/core/configs/assets/app_vectors.dart';
 import 'package:spotify/core/configs/theme/app_colors.dart';
+import 'package:spotify/spotify/presentation/authentication/pages/signin.dart';
 import 'package:spotify/spotify/presentation/authentication/pages/signup.dart';
 
 class signup_signinPage extends StatelessWidget {
@@ -96,7 +97,12 @@ class signup_signinPage extends StatelessWidget {
                         flex: 1,
                         child: TextButton(
                             onPressed: (){
-
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (BuildContext context) => const Signin()
+                                  )
+                              );
                             },
                             child: Text('Sigin',
                             style:
