@@ -92,7 +92,7 @@ class Signin  extends StatelessWidget {
 
           TextButton(
               onPressed: (){
-      Navigator.push(context,
+      Navigator.pushReplacement(context,
           MaterialPageRoute(builder: (context) => Signup()));
     },
               child: Text('Register Now'))
